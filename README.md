@@ -10,10 +10,15 @@ A sample client `sample-client.rkt` is included.
 Building
 ========
 
-    ./activator stage
+You need to install the program called `sbt`. Perhaps the easiest way (on Debian) is to download
+the latest `.deb` file from [bintray](https://dl.bintray.com/sbt/debian/) and do `dpkg -i ...`
+
+Then say (in the same directory where this `README.md` is located):
+
+    sbt stage
 
 Running
 =======
 
-    target/universal/stage/bin/latex2svg -Dhttp.port=9749 -Dhttp.address=127.0.0.1 -Dpidfile.path=/var/run/latex2svg.pid
+    target/universal/stage/bin/latex2svg -Dhttp.port=9749 -Dhttp.address=127.0.0.1 -Dpidfile.path=/tmp/latex2svg.pid
 
