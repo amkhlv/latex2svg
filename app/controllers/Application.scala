@@ -25,7 +25,7 @@ object Application extends Controller {
             403,
             Map(
               CONTENT_TYPE -> "text/plain",
-              "BystroTeX-error" -> ("foreign origin detected")
+              "BystroTeX-error" -> "foreign origin detected"
             )),
           body = Enumerator("foreign origin detected".getBytes)
         )
