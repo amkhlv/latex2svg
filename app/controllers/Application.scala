@@ -18,7 +18,18 @@ object Application extends Controller {
   }
   def process(token: String, latex: String, size: Int, bg: String, fg: String) = Action {
     request => {
-      if (token ==  tokenFromConf) {
+      val hmap = request.headers.toMap
+      if (!hmap.keys.toList.contains("BystroTeX")) {
+        Result(
+          header = ResponseHeader(
+            403,
+            Map(
+              CONTENT_TYPE -> "text/plain",
+              "BystroTeX-error" -> ("foreign origin detected")
+            )),
+          body = Enumerator("foreign origin detected".getBytes)
+        )
+      } else if (token ==  tokenFromConf) {
         val svg = Convert.toSVG(latex, size, bg, fg, true)
         if (svg.badLatex) Result(
           header = ResponseHeader(200,
@@ -47,7 +58,7 @@ object Application extends Controller {
       } else {
         Result(
           header = ResponseHeader(
-            200,
+            403,
             Map(
               CONTENT_TYPE -> "text/plain",
               "BystroTeX-error" -> "CSRF"
