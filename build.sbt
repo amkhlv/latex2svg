@@ -10,5 +10,7 @@ libraryDependencies ++= Seq(
   anorm,
   cache,
   "batik" % "batik-svggen" % "1.6-1",
-  "batik" % "batik-1.5-fop" % "0.20-5"
+  "batik" % "batik-1.5-fop" % "0.20-5",
+  "org.jbibtex" % "jbibtex" % "1.0.15"
 )
+

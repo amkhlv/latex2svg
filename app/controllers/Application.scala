@@ -2,16 +2,10 @@ package controllers
 
 import play.api.libs.iteratee.Enumerator
 import play.api.mvc._
- import play.api.Play.current
 
 case class ConfigurationException(message: String) extends Exception(message)
 
 object Application extends Controller {
-
-  val tokenFromConf : String = current.configuration.getString("token") match {
-    case Some(x) => x
-    case None => throw new ConfigurationException("missing configuration parameter: token")
-  }
 
   def index = Action {
     Ok(views.html.index("LaTeX to SVG server"))
