@@ -13,6 +13,9 @@ Building
 You need to install the program called `sbt` and another program called `ant`.
 Then (in the same directory where this `README.md` is located) execute the following commands:
 
+    git submodule init
+    git submodule update
+
     cd jlatexmath/
     ant
     cd ..
