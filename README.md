@@ -10,11 +10,12 @@ A sample client `sample-client.rkt` is included.
 Building
 ========
 
-You need to install the program called `sbt`. Perhaps the easiest way (on Debian) is to download
-the latest `.deb` file from [bintray](https://dl.bintray.com/sbt/debian/) and do `dpkg -i ...`
+You need to install the program called `sbt` and another program called `ant`.
+Then (in the same directory where this `README.md` is located) execute the following commands:
 
-Then say (in the same directory where this `README.md` is located):
-
+    cd jlatexmath/
+    ant
+    cd ..
     sbt stage
 
 Running
