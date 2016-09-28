@@ -23,7 +23,7 @@ object Application extends Controller {
             )),
           body = Enumerator("foreign origin detected".getBytes)
         )
-      } else if (token ==  tokenFromConf) {
+      } else if (token ==  tokenRandom) {
         val svg = Convert.toSVG(latex, size, bg, fg, true)
         if (svg.badLatex) Result(
           header = ResponseHeader(200,

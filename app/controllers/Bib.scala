@@ -34,7 +34,7 @@ object Bib extends Controller {
             )),
           body = Enumerator("foreign origin detected".getBytes)
         )
-      } else if (token == tokenFromConf) {
+      } else if (token == tokenRandom) {
         oBtDb match {
           case Some(x: BibTeXDatabase) => {
             val entry: BibTeXEntry = x.resolveEntry(new Key(k))
