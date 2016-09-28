@@ -24,5 +24,7 @@ Then (in the same directory where this `README.md` is located) execute the follo
 Running
 =======
 
-    target/universal/stage/bin/latex2svg -Dhttp.port=9749 -Dhttp.address=127.0.0.1 -Dpidfile.path=/tmp/latex2svg.pid
+    target/universal/stage/bin/latex2svg -DbystroFile=/path/to/bystroConf.xml -Dhttp.port=9749 -Dhttp.address=127.0.0.1 -Dpidfile.path=/tmp/latex2svg.pid
+
+The file `/path/to/bystroConf.xml` will be auto-generated
 
