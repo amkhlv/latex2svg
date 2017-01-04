@@ -25,7 +25,7 @@ import org.apache.batik.svggen.SVGGraphics2D;
 import org.apache.batik.dom.GenericDOMImplementation;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
-
+import org.w3c.dom.Element;
 
 
 public class Convert {
@@ -63,19 +63,25 @@ public class Convert {
             int depth = icon.getIconDepth();
 
             icon.setInsets(new Insets(1, 1, 1, 1));
+
+
             g2.setSVGCanvasSize(new Dimension(icon.getIconWidth(),icon.getIconHeight()));
             g2.setColor(bgc);
-
             g2.fillRect(0,0,icon.getIconWidth(),icon.getIconHeight());
-
             JLabel jl = new JLabel();
             jl.setForeground(fgc);
             icon.paintIcon(jl, g2, 0, 0);
-
+            Element root = g2.getRoot();
+            root.setAttributeNS(
+                    null,
+                    "viewBox",
+                    "0 0 "+ Integer.toString(icon.getIconWidth()) + " " + Integer.toString(icon.getIconHeight())
+            );
             boolean useCSS = true;
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             Writer out = new OutputStreamWriter(baos, "UTF-8");
-            g2.stream(out, useCSS);
+
+            g2.stream(root, out, useCSS);
             baos.flush();
             baos.close();
 
