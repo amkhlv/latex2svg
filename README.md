@@ -2,7 +2,8 @@
 Description
 ===========
 
-A server to run on the `localhost`. It accepts a `LaTeX` string as a query in the `POST` request
+This program is a backend to [BystroTeX](http://andreimikhailov.com/slides/bystroTeX/slides-manual/index.html),
+a server to run on the `localhost`. It accepts a `LaTeX` string as a query in the `POST` request
 to `http://localhost/svg` returning the `SVG` file.
 
 A sample client `sample-client.rkt` is included.
