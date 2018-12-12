@@ -11,7 +11,7 @@ A sample client `sample-client.rkt` is included.
 Building
 ========
 
-You need to install the program called `sbt` and another program called `ant`.
+You need to install the program called `sbt` and another program called `mvn`.
 Then (in the same directory where this `README.md` is located) execute the following commands:
 
     git submodule init
