@@ -29,3 +29,21 @@ Running
 
 The file `/path/to/bystroConf.xml` will be auto-generated
 
+Updating
+========
+
+It seems that `JLaTeXMath` is under active development. To use the latest version:
+
+    cd jlatexmath/
+    ant clean
+    git pull
+    git checkout master
+    ant
+
+Now we probably have more than one `jar` file in `jlatexmath/dist/`. __Remove all but the latest one__
+and then:
+
+    cd ..
+    sbt clean
+    sbt stage
+
