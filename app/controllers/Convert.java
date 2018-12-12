@@ -58,7 +58,8 @@ public class Convert {
 
         try {
             TeXFormula formula = new TeXFormula(latex);
-            TeXIcon icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, size);
+            //TeXIcon icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, size);
+            TeXIcon icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, size, TeXFormula.SANSSERIF);
             int height = icon.getIconHeight();
             int depth = icon.getIconDepth();
 

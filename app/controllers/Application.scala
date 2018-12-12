@@ -25,6 +25,8 @@ object Application extends Controller {
         )
       } else if (token ==  tokenRandom) {
         val svg = Convert.toSVG(latex, size, bg, fg, true)
+        //val svg = ConvertFreeHEP.toSVG(latex, size, bg, fg, true)
+        //val svg = ConvertJFreeSVG.toSVG(latex, size, bg, fg, true)
         if (svg.badLatex) Result(
           header = ResponseHeader(200,
             Map(
