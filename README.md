@@ -18,7 +18,7 @@ Then (in the same directory where this `README.md` is located) execute the follo
     git submodule update
 
     cd jlatexmath/
-    ant
+    mvn install
     cd ..
     sbt stage
 
@@ -35,13 +35,10 @@ Updating
 It seems that `JLaTeXMath` is under active development. To use the latest version:
 
     cd jlatexmath/
-    ant clean
+    mvn clean
     git pull
     git checkout master
-    ant
-
-Now we probably have more than one `jar` file in `jlatexmath/dist/`. __Remove all but the latest one__
-and then:
+    mvn install
 
     cd ..
     sbt clean
